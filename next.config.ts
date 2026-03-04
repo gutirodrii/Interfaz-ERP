@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  outputFileTracingRoot: process.cwd(),
-  distDir: ".next-app",
+  reactStrictMode: true
 };
 
 export default nextConfig;
