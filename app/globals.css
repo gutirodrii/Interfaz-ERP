@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1f4e79;
+  --color-secondary: #2a9d8f;
+  --color-accent: #f4a261;
+  --color-background: #f7fafc;
+  --color-surface: #ffffff;
+  --color-border: #d9e2ec;
+  --color-text-primary: #1f2933;
+  --color-text-secondary: #52606d;
+  --color-success: #2f9e44;
+  --color-warning: #f08c00;
+  --color-error: #d64545;
+  --color-info: #1971c2;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.rbc-calendar {
+  font-family: var(--font-body), sans-serif;
+  color: var(--color-text-primary);
+}
+
+.rbc-month-view,
+.rbc-time-view,
+.rbc-agenda-view {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.rbc-header {
+  border-bottom: 1px solid var(--color-border);
+  padding: 10px 6px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: #f9fcff;
+}
+
+.rbc-day-bg + .rbc-day-bg,
+.rbc-month-row + .rbc-month-row,
+.rbc-time-content > * + * > * {
+  border-left: 1px solid var(--color-border);
+}
+
+.rbc-date-cell {
+  padding: 6px;
+  text-align: left;
+  color: var(--color-text-secondary);
+}
+
+.rbc-today {
+  background-color: rgba(42, 157, 143, 0.08);
+}
+
+.rbc-event {
+  border-radius: 10px;
+  padding: 4px 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.rbc-off-range-bg {
+  background: #f8fbfd;
+}
