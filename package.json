@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "vercel-build": "next build && (ls -la || true) && (test -d .next && echo 'OK: .next exists' || (echo 'ERROR: .next missing' && ls -la && exit 1))"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
