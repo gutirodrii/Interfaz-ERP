@@ -1,0 +1,11 @@
+.git
+.gitignore
+.next
+node_modules
+npm-debug.log
+Dockerfile*
+cloudbuild.yaml
+deploy
+README.md
+design-system
+.DS_Store

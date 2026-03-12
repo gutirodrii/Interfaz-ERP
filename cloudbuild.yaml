@@ -1,0 +1,39 @@
+substitutions:
+  _REGION: europe-west1
+  _SERVICE_NAME: flowdexerp
+  _AR_REPOSITORY: flowdex
+  _NEXT_PUBLIC_API_BASE_URL: https://api.flowdex.es
+
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_SERVICE_NAME}:$SHORT_SHA
+      - --build-arg
+      - NEXT_PUBLIC_API_BASE_URL=${_NEXT_PUBLIC_API_BASE_URL}
+      - .
+
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_SERVICE_NAME}:$SHORT_SHA
+
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: bash
+    args:
+      - -ceu
+      - |
+        sed \
+          -e "s|__SERVICE_NAME__|${_SERVICE_NAME}|g" \
+          -e "s|__IMAGE__|${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_SERVICE_NAME}:$SHORT_SHA|g" \
+          -e "s|__API_BASE_URL__|${_NEXT_PUBLIC_API_BASE_URL}|g" \
+          -e "s|__DATABASE_SECRET_NAME__|${_DATABASE_SECRET_NAME}|g" \
+          deploy/cloudrun-service.yaml > /workspace/cloudrun-service.rendered.yaml
+
+        gcloud run services replace /workspace/cloudrun-service.rendered.yaml \
+          --region "${_REGION}" \
+          --project "$PROJECT_ID"
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_SERVICE_NAME}:$SHORT_SHA
