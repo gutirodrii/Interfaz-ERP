@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
   { label: "Documentos", href: "/app/documents", icon: FolderOpen },
   { label: "Usuarios", href: "/app/usuarios", icon: UserCog, adminOnly: true },
   { label: "Logs", href: "/app/logs", icon: ScrollText, adminOnly: true },
-  { label: "ConfiguraciÃ³n", href: "#", icon: Settings },
+  { label: "Configuración", href: "/app/configuracion", icon: Settings },
 ];
 
 type LeftSidebarProps = {

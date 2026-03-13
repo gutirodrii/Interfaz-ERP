@@ -2,11 +2,11 @@
 
 import { Wrench } from "lucide-react";
 
-export default function DocumentsPage() {
+export default function ConfiguracionPage() {
   return (
     <section className="space-y-6">
       <header className="space-y-1">
-        <h1 className="font-heading text-4xl font-semibold text-text-primary">Documentos</h1>
+        <h1 className="font-heading text-4xl font-semibold text-text-primary">Configuracion</h1>
         <p className="text-base text-text-secondary">Modulo temporalmente deshabilitado.</p>
       </header>
 
