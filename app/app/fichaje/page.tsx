@@ -225,9 +225,6 @@ export default function FichajePage() {
             </div>
             <div>
               <h1 className="font-heading text-3xl font-semibold text-text-primary">Fichaje por tarea</h1>
-              <p className="mt-1 text-sm text-text-secondary">
-                Gestiona tu jornada solo con tareas asignadas y revisa tu actividad reciente.
-              </p>
             </div>
           </div>
 
@@ -357,7 +354,6 @@ export default function FichajePage() {
               <CalendarDays size={18} className="text-text-secondary" />
               <div>
                 <h2 className="font-heading text-xl font-semibold text-text-primary">Resumen semanal</h2>
-                <p className="text-sm text-text-secondary">Balance rapido de tu semana sin sobrecargar la pantalla.</p>
               </div>
             </div>
 
