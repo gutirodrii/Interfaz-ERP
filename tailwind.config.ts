@@ -34,9 +34,7 @@ const config: Config = {
           error: "var(--color-error)",
           info: "var(--color-info)"
         },
-        appbg: "var(--color-background)",
-        chatuser: "var(--color-chat-user)",
-        chatai: "var(--color-chat-ai)"
+        appbg: "var(--color-background)"
       },
       borderRadius: {
         xl: "0.875rem",
@@ -56,10 +54,6 @@ const config: Config = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" }
         },
-        "slide-right": {
-          "0%": { opacity: "0", transform: "translateX(20px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" }
-        },
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" }
@@ -68,7 +62,6 @@ const config: Config = {
       animation: {
         "fade-up": "fade-up 360ms ease-out",
         "fade-in": "fade-in 200ms ease-out",
-        "slide-right": "slide-right 280ms ease-out",
         shimmer: "shimmer 1.8s infinite linear"
       }
     }

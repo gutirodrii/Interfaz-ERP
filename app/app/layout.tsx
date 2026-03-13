@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 import { LeftSidebar } from "@/components/layout/LeftSidebar";
-import { FloatingChat } from "@/components/chat/FloatingChat";
 import { TeamProvider } from "@/context/TeamContext";
 import { WorkProvider } from "@/context/WorkContext";
 import { clearSession, getSession, type MockSession } from "@/lib/auth";
@@ -52,7 +51,6 @@ export default function AppLayout({ children }: { children: ReactNode }) {
         <AppShell session={session} onSignOut={handleSignOut}>
           {children}
         </AppShell>
-        <FloatingChat />
       </WorkProvider>
     </TeamProvider>
   );

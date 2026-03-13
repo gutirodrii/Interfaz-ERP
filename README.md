@@ -34,12 +34,11 @@
     *   Cálculo automático de horas trabajadas (Diario, Semanal, Overtime).
     *   Gráficos visuales del progreso diario y semanal.
 *   📊 **Dashboard de Equipo:** Vista general del estado del equipo (quién está trabajando, quién falta por fichar y horas totales del equipo en el día).
-*   💬 **Chat Conjunto (Team Hub):** Chat flotante tipo burbuja para comunicación continua con el resto de miembros del equipo.
 *   📁 **Gestión de Documentos:** Subida de archivos (drag & drop), categorización (Facturas, Contratos) con indicadores de estado de carga.
 *   📋 **Tareas (Kanban Boards):** Tableros interactivos con soporte completo *Drag & Drop* (*dnd-kit*).
 *   📅 **Calendario (Eventos):** Integración nativa (*react-big-calendar*) y soporte para agendar reuniones y turnos.
 *   🌙 **Dark Mode & Temas:** Soporte nativo y persistente para modo claro y oscuro a través de `next-themes`.
-*   💾 **Persistencia Local:** Los estados de fichaje y chat se sincronizan automáticamente con el navegador (`localStorage` seguro ante fallos SSR).
+*   💾 **Persistencia Local:** Los estados clave de la interfaz se sincronizan automáticamente con el navegador (`localStorage` seguro ante fallos SSR).
 
 ## 🛠 Stack Tecnológico
 
@@ -105,11 +104,10 @@ npm run start
 
 *   `/app`: Rutas del App Router de Next.js (`/login`, `/app/fichaje`, `/app/documents`, etc.)
 *   `/components`: Componentes reutilizables de React (UI modular).
-    *   `/chat`: Widget del chat de equipo.
     *   `/layout`: Interfaz general, sidebar principal y proveedores de temas.
     *   `/ui`: Componentes atómicos (ej. `file-upload.tsx`).
 *   `/lib`: Lógica de negocio, servicios e integraciones.
-    *   `/store`: Estado global con Zustand (`fichajeStore.ts`, `chatStore.ts`).
+    *   `/store`: Estado global con Zustand (ej. `fichajeStore.ts`).
 *   `/context`: Contextos de React para datos (Teams, Work).
 *   `tailwind.config.ts`: Configuración personalizada del sistema de diseño (Brand colors, gradientes, animaciones).
 
