@@ -6,7 +6,6 @@ import { LeftSidebar } from "@/components/layout/LeftSidebar";
 import { TeamProvider } from "@/context/TeamContext";
 import { WorkProvider } from "@/context/WorkContext";
 import { clearSession, getSession, type MockSession } from "@/lib/auth";
-import "@/app/globals.css";
 
 export default function AppLayout({ children }: { children: ReactNode }) {
   const router = useRouter();

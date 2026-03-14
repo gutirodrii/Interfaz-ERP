@@ -7,7 +7,7 @@ export default function MercadosRedirectPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/app/proyectos");
+    router.replace("/proyectos");
   }, [router]);
 
   return null;

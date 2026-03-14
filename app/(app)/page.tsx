@@ -408,7 +408,7 @@ export default function DashboardPage() {
             </button>
 
             <Link
-              href="/app/fichaje"
+              href="/fichaje"
               className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line px-4 py-2 text-sm font-semibold text-text-secondary transition-colors hover:bg-surface2"
             >
               Abrir vista completa de fichaje

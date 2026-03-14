@@ -24,7 +24,7 @@ export default function LoginPage() {
   useEffect(() => {
     const session = getSession();
     if (session) {
-      router.replace("/app");
+      router.replace("/");
       return;
     }
     setCheckingSession(false);
@@ -60,7 +60,7 @@ export default function LoginPage() {
     setLoading(false);
     if (result.success) {
       saveSession(result.session);
-      router.replace("/app");
+      router.replace("/");
     } else {
       setGeneralError("Credenciales incorrectas o API no disponible. Puedes usar demo@flowops.com / demo1234");
     }

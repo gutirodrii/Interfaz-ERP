@@ -10,6 +10,8 @@ RUN npm ci
 
 FROM base AS builder
 
+ENV NODE_ENV=production
+
 ARG NEXT_PUBLIC_API_BASE_URL=https://api.flowdex.es
 ENV NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL}
 

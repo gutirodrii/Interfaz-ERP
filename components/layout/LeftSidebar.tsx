@@ -17,16 +17,16 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: "Fichaje", href: "/app/fichaje", icon: Clock },
-  { label: "Inicio", href: "/app", icon: LayoutDashboard },
-  { label: "Equipos", href: "/app/teams", icon: Users },
-  { label: "Tareas", href: "/app/tasks", icon: CheckSquare },
-  { label: "Clientes", href: "/app/clientes", icon: Building2 },
-  { label: "Proyectos", href: "/app/proyectos", icon: FolderKanban },
-  { label: "Calendario", href: "/app/calendar", icon: Calendar },
-  { label: "Documentos", href: "/app/documents", icon: FolderOpen },
-  { label: "Usuarios", href: "/app/usuarios", icon: UserCog, adminOnly: true },
-  { label: "Logs", href: "/app/logs", icon: ScrollText, adminOnly: true },
+  { label: "Fichaje", href: "/fichaje", icon: Clock },
+  { label: "Inicio", href: "/", icon: LayoutDashboard },
+  { label: "Equipos", href: "/teams", icon: Users },
+  { label: "Tareas", href: "/tasks", icon: CheckSquare },
+  { label: "Clientes", href: "/clientes", icon: Building2 },
+  { label: "Proyectos", href: "/proyectos", icon: FolderKanban },
+  { label: "Calendario", href: "/calendar", icon: Calendar },
+  { label: "Documentos", href: "/documents", icon: FolderOpen },
+  { label: "Usuarios", href: "/usuarios", icon: UserCog, adminOnly: true },
+  { label: "Logs", href: "/logs", icon: ScrollText, adminOnly: true },
   { label: "Configuración", href: "#", icon: Settings },
 ];
 
@@ -110,7 +110,7 @@ export function LeftSidebar({ session, onSignOut }: LeftSidebarProps) {
                 item.href !== "#" &&
                 (pathname === item.href ||
                   (item.href !== "/app" && pathname.startsWith(`${item.href}/`)));
-              const isFichaje = item.href === "/app/fichaje";
+              const isFichaje = item.href === "/fichaje";
               // eslint-disable-next-line react-hooks/rules-of-hooks
               const fichajeStatus = isFichaje ? useFichajeStore.getState().status : null;
 
